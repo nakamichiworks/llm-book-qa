@@ -1,11 +1,11 @@
 import streamlit as st
+from langchain import OpenAI
 from langchain.agents.agent import AgentExecutor
 from langchain.agents.agent_toolkits import (
     VectorStoreInfo,
     VectorStoreToolkit,
     create_vectorstore_agent,
 )
-from langchain.chat_models import ChatOpenAI
 from langchain.document_loaders import UnstructuredEPubLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
@@ -55,7 +55,7 @@ def create_book_qa_agent(
     temperature: float = 0.1,
     verbose: bool = False,
 ) -> AgentExecutor:
-    llm = ChatOpenAI(temperature=temperature)  # type: ignore
+    llm = OpenAI(temperature=temperature)  # type: ignore
     book_store = create_book_store(book_file, book_store_key)
     vectorstore_info = VectorStoreInfo(
         name=book_store_key, description=book_description, vectorstore=book_store
