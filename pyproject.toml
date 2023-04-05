@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "llm-book-qa"
+version = "0.1.0"
+description = ""
+authors = ["Michihiro Nakamura <nakamichi@nakamichi.org>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+openai = "^0.27.4"
+langchain = "^0.0.132"
+streamlit = "^1.20.0"
+sentence-transformers = "^2.2.2"
+unstructured = "^0.5.9"
+pypandoc-binary = "^1.11"
+chromadb = "^0.3.21"
+# ebooklib = "^0.18"
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.12.0"
+jupyter = "^1.0.0"
+python-dotenv = "^1.0.0"
+pytest = "^7.2.2"
+flake8 = "^6.0.0"
+black = "^23.3.0"
+isort = "^5.12.0"
+mypy = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
